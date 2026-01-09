@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNC Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              cnc: {
+                900: 'var(--cnc-900)',
+                800: 'var(--cnc-800)',
+                700: 'var(--cnc-700)',
+                500: 'var(--cnc-500)',
+                600: 'var(--cnc-600)',
+                success: 'var(--cnc-success)',
+                danger: 'var(--cnc-danger)',
+                warning: '#f59e0b',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'slide-in': 'slideIn 0.3s ease-out',
+              'bounce-slow': 'bounce 3s infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideIn: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+      
+      :root {
+        /* Standard Light */
+        --cnc-900: #ffffff;
+        --cnc-800: #f8fafc;
+        --cnc-700: #e2e8f0;
+        --cnc-500: #0f172a;
+        --cnc-600: #475569;
+        --cnc-success: #10b981;
+        --cnc-danger: #ef4444;
+      }
+      
+      .dark {
+        --cnc-900: #0f172a;
+        --cnc-800: #1e293b;
+        --cnc-700: #334155;
+        --cnc-500: #f8fafc;
+        --cnc-600: #cbd5e1;
+        --cnc-success: #10b981;
+        --cnc-danger: #ef4444;
+      }
+
+      .theme-cyberpunk {
+        --cnc-900: #050505;
+        --cnc-800: #0f0f1b;
+        --cnc-700: #1a1a2e;
+        --cnc-500: #00ff9f; /* Neon Green */
+        --cnc-600: #bc13fe; /* Neon Purple */
+        --cnc-success: #00ff9f;
+        --cnc-danger: #ff0055;
+      }
+
+      .theme-oled {
+        --cnc-900: #000000;
+        --cnc-800: #000000;
+        --cnc-700: #111111;
+        --cnc-500: #ffffff;
+        --cnc-600: #888888;
+        --cnc-success: #00c853;
+        --cnc-danger: #ff1744;
+      }
+
+      .theme-nord {
+        --cnc-900: #2e3440;
+        --cnc-800: #3b4252;
+        --cnc-700: #4c566a;
+        --cnc-500: #eceff4;
+        --cnc-600: #d8dee9;
+        --cnc-success: #a3be8c;
+        --cnc-danger: #bf616a;
+      }
+
+      .theme-forest {
+        --cnc-900: #0b120b;
+        --cnc-800: #1a241a;
+        --cnc-700: #2d3c2d;
+        --cnc-500: #c1e4c1;
+        --cnc-600: #8ebf8e;
+        --cnc-success: #10b981;
+        --cnc-danger: #ef4444;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--cnc-900);
+        color: var(--cnc-500);
+        transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--cnc-700); 
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--cnc-500); 
+      }
+
+      /* Transitions for theme switching */
+      * {
+        transition: border-color 0.3s ease, background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react-hot-toast": "https://esm.sh/react-hot-toast@^2.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-cnc-900 text-slate-900 dark:text-white overflow-hidden transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
